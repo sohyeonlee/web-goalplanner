@@ -1,0 +1,31 @@
+@page {
+        size: landscape;
+        margin: 1em;
+    }
+
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+        #mytable,
+        #mytable * {
+            visibility: visible;
+        }
+        #mytable {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+        #main {
+            background-color: #6c63ff;
+        }
+        .sub {
+            background-color: #efefef;
+            border: black solid 1px !important;
+        }
+        .center {
+            background-color: #efefef;
+        }
+    }
+}

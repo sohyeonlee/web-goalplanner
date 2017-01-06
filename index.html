@@ -1,123 +1,337 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Planner</title>
-    <meta name="description" content="" />
-    <!-- fb open graph -->
+    <title>목표 달성 플래너</title>
+    <meta name="description" content="일본의 괴물투수인 오타니 쇼헤이 선수의 만다라트 기법을 사용한 목표달성표로부터 영감을 받아 만들어졌습니다.
+2017년 혹은 앞으로의 목표를 계획을 구체화 시킬 때 유용하게 사용할 수 있는 표 입니다 :)" />
+    <!-- open graph -->
+    <meta property="og:title" content="목표 달성 플래너" />
+    <meta property="og:image" content="https://s3-us-west-1.amazonaws.com/web-planner/img/preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:description" content="일본의 괴물투수인 오타니 쇼헤이 선수의 만다라트 기법을 사용한 목표달성표로부터 영감을 받아 만들어졌습니다.
+2017년 혹은 앞으로의 목표를 계획을 구체화 시킬 때 유용하게 사용할 수 있는 표 입니다 :)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://web-planner.s3-website-us-west-1.amazonaws.com/" />
+    <meta property="fb:app_id" content="240206616406930" />
     <meta name="keywords" content="planner, 2017, new year" />
     <meta name="Resource-type" content="Document" />
     <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css" />
-    <script type="text/javascript" src="style/jquery.min.js"/>
-    <script type="text/javascript" src="style/bootstrap.min.js"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/print.css" />
+    <link rel="shortcut icon" href="favicon-calendar.ico" type="image/x-icon" />
+
+    <script src="https://use.fontawesome.com/0ad05d1a5e.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
 </head>
 
 <body>
-    <table class="table table-bordered">
+  <div id="non-desktop">데스크탑 환경에 최적화 되어있습니다.</div>
+    <header>
+        <div class="head-title">
+            <h1> 목표 달성 플래너 </h1>
+            <h4> 일본의 괴물투수인 오타니 쇼헤이 선수의 만다라트 기법을 사용한
+                <a href="http://m.entertain.naver.com/read?oid=469&aid=0000108938" target="_blank">
+                목표달성표 <i class="fa fa-external-link" aria-hidden="true"></i>
+              </a> 로부터 영감을 받아 만들어졌습니다.
+                <br> 2017년 혹은 앞으로의 목표를 계획을 구체화 시킬 때 유용하게 사용할 수 있는 표 입니다 <i class="fa fa-smile-o" aria-hidden="true"></i>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.print()">
+                <b><i class="fa fa-print" aria-hidden="true" style="padding: 0.1em 0.3em"></i>인쇄하기</b></button>
+        </div>
+    </header>
+    <table class="table table-bordered" id="mytable">
         <tbody>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #1" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #2" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #3" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #1" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #2" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #3" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                    </textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #4" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #4" class="txtarea"></textarea>
+                </td>
+                <td id="main">
+                    <textarea maxlength="16" style="resize:none" placeholder="핵심 목표" class="txtarea main" name="main"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #5" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #5" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #6" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #7" class="txtarea"></textarea>
+                </td>
+                <td class="center">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #8" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" sstyle="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #6" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #7" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td class="sub">
+                    <textarea maxlength="16" style="resize:none" placeholder="세부 목표 #8" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
             <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
+                <td>
+                    <textarea maxlength="16" style="resize:none" class="txtarea"></textarea>
+                </td>
             </tr>
 
         </tbody>
     </table>
+    <footer>
+        Made with
+        <span style="color: #ff6363">♥</span> by <a class="names" href="https://www.linkedin.com/in/sohyeonlee/en" target="_blank"> Irene Lee </a> and <a class="names" href="https://www.linkedin.com/in/gayoungpark" target="_blank"> Gayoung Park </a>
+
+    </footer>
 </body>
+
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-89886228-1', 'auto');
+    ga('send', 'pageview');
+</script>
 
 </html>

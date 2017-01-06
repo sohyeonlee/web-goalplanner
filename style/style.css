@@ -1,0 +1,143 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+header {
+    text-align: center;
+    font-weight: 100;
+    float: left;
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif !important;
+    color: #5a6170;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5em;
+    background-color: #f8f9fa;
+    position: relative;
+		margin-bottom: 1em;
+}
+h1 {
+    font-weight: 500;
+}
+h4 {
+    font-weight: 400;
+}
+footer {
+    text-align: center;
+		padding-bottom: 1em;
+}
+.dropbtn {
+    background-color: #6c63ff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    float: right;
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #7977e7;
+}
+html, body {
+    height: 100%;
+}
+header {
+    width: 100%;
+}
+table {
+    border: 2px solid !important;
+    height: 90%;
+}
+table tr:nth-child(3n) {
+    border-bottom: 2px solid !important;
+}
+table tr td:nth-child(3n) {
+    border-right: 2px solid !important;
+}
+#mytable {
+    margin: 2em auto;
+    width: 80%;
+}
+.txtarea {
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+#main {
+    background-color: #ebe1f9;
+}
+.sub {
+    background-color: #efefef;
+    border: #aaa solid;
+}
+.center {
+    background-color: #efefef;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+}
+:-ms-input-placeholder {
+    text-align: center;
+}
+textarea {
+    resize: none !important;
+}
+.names {
+	color: #3731a3 !important;
+}
+
+/* mobile only views*/
+@media (min-width: 981px) {
+  #non-desktop {
+    display: none;
+  }
+}
+/* mobile only views*/
+@media (max-width: 980px) {
+  #non-desktop {
+    padding: 2em;
+    background-color: #ff3232;
+    color: white;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+  }
+  .dropbtn {
+    display: none;
+  }
+}
